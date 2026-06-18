@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexia - Autonomous AI Agent & Automation</title>
+    
+    <!-- Content Security Policy (CSP) for Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com;">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Cinzel for elegant headers & Inter for clean text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        body { background-color: #FDFBF7; } /* Warm Minimalist Beige */
+    </style>
+</head>
+<body class="font-inter text-stone-800 antialiased selection:bg-stone-200">
+
+    <!-- 1. HEADER SECTION -->
+    <header class="border-b border-stone-200/60 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-cinzel text-2xl font-bold tracking-widest text-stone-900">NEXIA</div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-stone-600">
+                <a href="#features" class="hover:text-stone-900 transition">Features</a>
+                <a href="#solutions" class="hover:text-stone-900 transition">Solutions</a>
+                <a href="#about" class="hover:text-stone-900 transition">About</a>
+            </nav>
+            <div>
+                <a href="#contact" class="bg-stone-950 text-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-none hover:bg-stone-800 transition shadow-sm">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative py-24 md:py-32 overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <span class="inline-block text-xs font-semibold tracking-widest text-amber-800 uppercase bg-amber-50 px-3 py-1 border border-amber-200/50 mb-6">
+                The Future of Workflow Intelligence
+            </span>
+            <h1 class="font-cinzel text-4xl md:text-6xl font-bold tracking-tight text-stone-950 leading-[1.15] mb-8">
+                Autonomous AI Agents <br><span class="text-stone-600">Built to Scale Your Venture</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-stone-600 text-base md:text-lg leading-relaxed mb-10 font-light">
+                Nexia deploys high-performance automated workflows and dedicated intelligent agents designed to qualify leads, sync operational data, and clear technical bottlenecks 24/7.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto bg-stone-950 text-white px-8 py-4 text-sm font-medium tracking-wide hover:bg-stone-800 transition">
+                    Launch Your Agent
+                </a>
+                <a href="#features" class="w-full sm:w-auto border border-stone-300 text-stone-800 bg-white/50 px-8 py-4 text-sm font-medium tracking-wide hover:bg-stone-100 transition">
+                    Explore Capabilities
+                </a>
+            </div>
+        </div>
+        <!-- Minimalist Subtle Background Graphic -->
+        <div class="absolute inset-0 bg-[radial-gradient(#e5e5e5_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+    </section>
+
+    <!-- 3. FEATURES SECTION -->
+    <section id="features" class="py-20 bg-white border-y border-stone-200/60">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <h2 class="font-cinzel text-2xl md:text-3xl font-bold text-stone-950 mb-4">Precision Automation</h2>
+                <p class="text-stone-600 text-sm font-light">Engineered to eliminate manual overhead and optimize business throughput seamlessly.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 border border-stone-100 bg-[#FDFBF7]/50 rounded-none hover:border-stone-300 transition duration-300">
+                    <div class="w-10 h-10 bg-stone-950 text-white flex items-center justify-center text-sm font-bold mb-6">01</div>
+                    <h3 class="font-cinzel text-lg font-bold text-stone-900 mb-3">Lead Qualification</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed font-light">Intelligent agents screen, qualify, and segment high-intent prospects dynamically in real-time.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-8 border border-stone-100 bg-[#FDFBF7]/50 rounded-none hover:border-stone-300 transition duration-300">
+                    <div class="w-10 h-10 bg-amber-900 text-white flex items-center justify-center text-sm font-bold mb-6">02</div>
+                    <h3 class="font-cinzel text-lg font-bold text-stone-900 mb-3">Data Synchronization</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed font-light">Instantly capture, clean, and map your operational data into centralized sheets and internal pipelines.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-8 border border-stone-100 bg-[#FDFBF7]/50 rounded-none hover:border-stone-300 transition duration-300">
+                    <div class="w-10 h-10 bg-stone-800 text-white flex items-center justify-center text-sm font-bold mb-6">03</div>
+                    <h3 class="font-cinzel text-lg font-bold text-stone-900 mb-3">24/7 Operations</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed font-light">Autonomous workflows run continuously in the background, keeping infrastructure active with zero downtime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SOCIAL PROOF / TRUST SECTION -->
+    <section class="py-20 bg-[#FDFBF7]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="font-cinzel text-xl italic text-stone-900 leading-relaxed">
+                "Nexia completely restructured how we process backend data. The custom AI agents handled lead qualification flawlessly, reducing manual input by over 80%."
+            </p>
+            <div class="mt-6 flex items-center justify-center space-x-3">
+                <div class="h-px w-6 bg-stone-300"></div>
+                <span class="text-xs font-semibold uppercase tracking-widest text-stone-600">Enterprise Product Lead</span>
+                <div class="h-px w-6 bg-stone-300"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FOOTER -->
+    <footer class="bg-stone-950 text-stone-400 py-12 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="font-cinzel text-xl font-bold tracking-widest text-white">NEXIA</div>
+            <p class="text-xs font-light tracking-wide">&copy; 2026 Nexia Intelligence. Executed with high-end precision.</p>
+            <div class="flex space-x-6 text-xs font-medium">
+                <a href="#" class="hover:text-white transition" rel="noopener noreferrer">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition" rel="noopener noreferrer">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
