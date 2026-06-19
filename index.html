@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexia — المنصة الذكية للعقارات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* لوحة الألوان الجديدة المستوحاة من الطبيعة والفخامة */
+        :root {
+            --ivory-bg: #FDFBF7;        /* العاجي الأساسي للخلفيات */
+            --ivory-accent: #F4F0E6;    /* عاجي داكن قليلاً للمقاطع الفرعية */
+            --walnut-dark: #2C221E;     /* الجوزي الداكن للنصوص العميقة والخلفيات الفخمة */
+            --walnut-light: #4A3B32;    /* جوزي متوسط للنصوص الثانوية والحدود */
+            --olive-primary: #5F6F52;   /* الزيتوني الأساسي للأزرار والعناصر التفاعلية */
+            --olive-hover: #434F37;     /* زيتوني داكن عند تمرير الفأرة */
+            --olive-light: #A9B388;     /* زيتوني فاتح للتأثيرات الناعمة */
+            
+            --font-headings: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--ivory-bg);
+            color: var(--walnut-dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* القائمة العلوية - Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(253, 251, 247, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(74, 59, 50, 0.08);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        /* تعديل احترافي لحجم اللوجو واندمجه */
+        .brand img {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand span {
+            font-family: var(--font-headings);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--walnut-dark);
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--walnut-light);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--olive-primary);
+        }
+
+        .btn {
+            background: var(--olive-primary);
+            color: var(--ivory-bg);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn:hover {
+            background: var(--olive-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(95, 111, 82, 0.2);
+        }
+
+        /* الواجهة الرئيسية - Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            background: linear-gradient(180deg, var(--ivory-accent) 0%, var(--ivory-bg) 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(95, 111, 82, 0.1);
+            color: var(--olive-primary);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-family: var(--font-headings);
+        }
+
+        .hero h1 {
+            font-family: var(--font-headings);
+            font-size: 3.5rem;
+            color: var(--walnut-dark);
+            line-height: 1.2;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            color: var(--walnut-light);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* تنسيق اللوجو الكبير في قسم الـ Hero ليظهر بوضوح وبدون حواف بيضاء مكسورة */
+        .hero-logo-wrapper {
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-logo-wrapper img {
+            max-width: 140px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 16px rgba(74, 59, 50, 0.12));
+        }
+
+        /* قسم الميزات - Features Section */
+        .section {
+            padding: 7rem 2rem;
+        }
+
+        .section-dark {
+            background-color: var(--walnut-dark);
+            color: var(--ivory-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header span {
+            color: var(--olive-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-headings);
+            font-size: 2.5rem;
+            margin-top: 0.5rem;
+            color: inherit;
+        }
+
+        .grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--ivory-bg);
+            border: 1px solid rgba(74, 59, 50, 0.06);
+            padding: 3rem 2rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .section-dark .card {
+            background: rgba(253, 251, 247, 0.03);
+            border: 1px solid rgba(253, 251, 247, 0.08);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(44, 34, 30, 0.05);
+            border-color: var(--olive-light);
+        }
+
+        .card-icon {
+            color: var(--olive-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            font-family: var(--font-headings);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: inherit;
+        }
+
+        .card p {
+            color: var(--walnut-light);
+            font-size: 0.95rem;
+        }
+
+        .section-dark .card p {
+            color: rgba(253, 251, 247, 0.7);
+        }
+
+        /* تذييل الصفحة - Footer */
+        footer {
+            background: var(--walnut-dark);
+            color: rgba(253, 251, 247, 0.6);
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(253, 251, 247, 0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: var(--ivory-bg);
+            font-family: var(--font-headings);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <img src="logo.png" alt="Nexia Logo">
+                <span>NEXIA</span>
+            </a>
+            <nav>
+                <a href="#features">الميزات</a>
+                <a href="#work">آلية العمل</a>
+                <a href="#pricing">الأسعار</a>
+                <a href="#" class="btn">ابدأ الآن</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">REAL ESTATE AI PLATFORM</div>
+        
+        <div class="hero-logo-wrapper">
+            <img src="logo.png" alt="Nexia Master Logo">
+        </div>
+
+        <h1>أتمتة مبيعاتك العقارية بالذكاء الاصطناعي على مدار الساعة</h1>
+        <p>نظام ذكي متكامل يتولى استقطاب العملاء المهتمين بالعقارات، تأهيلهم بدقة، وجدولة المواعيد تلقائياً دون أدنى عناء بشري.</p>
+        <a href="#" class="btn" style="padding: 1rem 2.5rem; font-size: 1rem;">أطلق عميلك الآلي الآن</a>
+    </section>
+
+    <section id="features" class="section">
+        <div class="section-header">
+            <span>القدرات الأساسية</span>
+            <h2>مصمم خصيصاً لوكالات العقارات الحديثة</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">✦</div>
+                <h3>تأهيل ذكي للعملاء المحتملين</h3>
+                <p>يطرح العميل الآلي الأسئلة الجوهرية بذكاء (الميزانية، الموقع، نوع العقار) ليفرز المشتري الجاد عن المتصفح العابر.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">✦</div>
+                <h3>ربط فوري وحفظ تلقائي للمعلومات</h3>
+                <p>يتم تنظيم تفاصيل كل عميل ومزامنتها مباشرة مع جداول البيانات دون أي إدخال يدوي لضمان صفر أخطاء.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">✦</div>
+                <h3>تنبيهات لحظية عبر تليجرام</h3>
+                <p>بمجرد وصول عميل مؤهل وعالي الجودة، يتلقى فريقك إشعاراً فورياً يتضمن الميزانية والطلب والقدرة المالية.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">✦</div>
+                <h3>جدولة المعاينات والمواعيد</h3>
+                <p>يقوم النظام بحجز مواعيد زيارة العقارات مباشرة عبر المحادثة حسب الأوقات المتاحة، دون الحاجة لتبادل المكالمات الطويلة.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="section section-dark">
+        <div class="section-header">
+            <span style="color: var(--olive-light);">الكفاءة التشغيلية</span>
+            <h2>كيف يعمل نظام نكسيا؟</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon" style="color: var(--olive-light);">01</div>
+                <h3>ربط قنوات الإعلانات</h3>
+                <p>يتصل العميل الآلي مباشرة بإعلاناتك على منصات التواصل الاجتماعي ليستقبل المهتمين فوراً.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="color: var(--olive-light);">02</div>
+                <h3>المحادثة الفورية والتأهيل</h3>
+                <p>يتفاعل النظام بأسلوب بشري راقٍ لجمع كافة متطلبات العميل الاستثمارية والسكنية بدقة.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="color: var(--olive-light);">03</div>
+                <h3>إغلاق الصفقة للفريق</h3>
+                <p>يسلم النظام العميل الجاهز تماماً إلى فريق مبيعاتك لإنهاء الإجراءات القانونية وتوقيع العقود.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 جميع الحقوق محفوظة لمنصة <strong>NEXIA</strong>. تم تصميمه بكل إتقان.</p>
+    </footer>
+
+</body>
+</html>
