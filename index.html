@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexia — AI Real Estate Intelligence</title>
+  
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+  <meta name="description" content="Nexia — Advanced AI Real Estate Platform. Automate your lead qualification, data capture, and viewing appointments 24/7." />
+  <meta name="keywords" content="Real Estate AI, Automation, SaaS, Nexia, Lead Qualification, WhatsApp Bot, Real Estate Automation" />
+  <meta name="author" content="Nexia" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nexia — AI Real Estate Intelligence" />
+  <meta property="og:description" content="Automate your real estate sales around the clock. Nexia qualifies every lead, captures data, and syncs it instantly." />
+  <meta property="og:image" content="logo.svg" />
+  
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  
+  <style>
+    :root {
+      /* درجات اللون البني الداكنة والفخمة */
+      --brown-dark:  #1A0F08; 
+      --brown:       #3A2010; 
+      --brown-mid:   #59341C; 
+      --brown-lt:    #8C5E3C; 
+      
+      --beige-dark:  #D9C4A8;
+      --beige:       #EDE0CC;
+      --beige-lt:    #F5EDE0;
+      --cream:       #FAF6F0;
+      --white:       #FFFFFF;
+      --ink:         #100A05; 
+      --muted:       #7A6248;
+      --rule:        rgba(89, 52, 28, 0.15);
+    }
+ 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+ 
+    /* ===== NAV ===== */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,246,240,0.96);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo img { width: 38px; height: 38px; object-fit: contain; }
+    .nav-logo-text {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem; font-weight: 700;
+      letter-spacing: 0.2em; color: var(--brown-dark);
+    }
+    .nav-links {
+      display: flex; gap: 2.5rem; list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--brown); }
+    .nav-cta {
+      padding: 10px 26px;
+      background: var(--brown-dark);
+      color: var(--white);
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border-radius: 2px;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--brown); transform: translateY(-1px); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+ 
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--brown-dark);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 7rem 2rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 35%, rgba(140, 94, 60, 0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(58, 32, 16, 0.3) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      text-align: center; max-width: 800px; margin: 0 auto;
+    }
+    .hero-logo {
+      width: 88px; height: 88px; object-fit: contain;
+      margin: 0 auto 2.5rem; display: block;
+      filter: drop-shadow(0 0 30px rgba(140, 94, 60, 0.3));
+      animation: float 5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-12px); }
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--brown-lt);
+      border: 1px solid rgba(140, 94, 60, 0.4);
+      padding: 6px 18px; border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+    .hero-h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: 0.02em;
+      color: var(--beige-lt);
+      margin-bottom: 1.5rem;
+    }
+    .hero-h1 span { color: var(--beige-dark); }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 300; line-height: 1.8;
+      color: rgba(237,224,204,0.6);
+      max-width: 560px; margin: 0 auto 2.5rem;
+    }
+    .hero-actions {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; justify-content: center;
+    }
+    .btn-primary {
+      padding: 14px 38px;
+      background: var(--beige);
+      color: var(--brown-dark);
+      font-size: 0.82rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border: none; border-radius: 2px; cursor: pointer;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .btn-secondary {
+      padding: 13px 38px;
+      background: transparent;
+      color: var(--beige-dark);
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1px solid rgba(237,224,204,0.3);
+      border-radius: 2px; cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-secondary:hover { border-color: var(--beige); color: var(--beige-lt); }
+ 
+    /* ===== STATS ===== */
+    .stats-bar { background: var(--beige); border-bottom: 1px solid var(--rule); }
+    .stats-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 2rem;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item {
+      padding: 2.5rem 2rem; text-align: center;
+      border-right: 1px solid var(--rule);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 2.6rem; font-weight: 700;
+      color: var(--brown); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--muted); margin-top: 6px;
+    }
+    @media (max-width: 640px) {
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--rule); }
+      .stat-item:last-child { border-bottom: none; }
+    }
+ 
+    /* ===== SECTIONS ===== */
+    .section { padding: 6rem 0; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+ 
+    .eyebrow {
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--brown-mid); display: block; margin-bottom: 1rem;
+    }
+    .gold-rule {
+      width: 44px; height: 2px;
+      background: var(--brown-mid); margin: 1.25rem 0;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; line-height: 1.2;
+      color: var(--brown-dark); margin-bottom: 1rem;
+    }
+    .section-title.light { color: var(--beige-lt); }
+    .section-lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 300;
+      line-height: 1.8; color: var(--muted);
+      max-width: 540px;
+    }
+    .section-lead.light { color: rgba(237,224,204,0.55); }
+    .section-header { margin-bottom: 4rem; }
+ 
+    /* ===== FEATURES ===== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .feat-card {
+      background: var(--cream);
+      padding: 2.5rem 2rem;
+      transition: background 0.25s;
+    }
+    .feat-card:hover { background: var(--white); }
+    .feat-icon { font-size: 1.8rem; margin-bottom: 1.25rem; display: block; }
+    .feat-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem; font-weight: 600;
+      letter-spacing: 0.04em; color: var(--brown-dark);
+      margin-bottom: 0.75rem;
+    }
+    .feat-body { font-size: 0.88rem; line-height: 1.8; color: var(--muted); }
+ 
+    /* ===== HOW IT WORKS ===== */
+    .how-bg { background: var(--brown-dark); }
+    .steps { display: flex; flex-direction: column; }
+    .step {
+      display: grid; grid-template-columns: 80px 1fr;
+      gap: 2rem; padding: 2.5rem 0;
+      border-bottom: 1px solid rgba(140, 94, 60, 0.2);
+      align-items: start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--brown-lt); line-height: 1; padding-top: 4px;
+    }
+    .step-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--beige-lt); margin-bottom: 0.5rem;
+    }
+    .step-body { font-size: 0.88rem; line-height: 1.8; color: rgba(237,224,204,0.5); }
+ 
+    /* ===== PRICING ===== */
+    .pricing-bg { background: var(--beige-lt); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem; max-width: 780px; margin: 0 auto;
+    }
+    .price-card {
+      padding: 2.5rem;
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .price-card:hover {
+      box-shadow: 0 20px 50px rgba(26, 15, 8, 0.1);
+      transform: translateY(-4px);
+    }
+    .price-card.featured {
+      background: var(--brown-dark);
+      border-color: var(--brown-mid);
+    }
+    .price-badge {
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--brown-mid); margin-bottom: 0.75rem; display: block;
+    }
+    .price-card.featured .price-badge { color: var(--brown-lt); }
+    .price-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--brown-dark); margin-bottom: 0.5rem;
+    }
+    .price-card.featured .price-name { color: var(--beige-lt); }
+    .price-amount {
+      font-family: 'Cinzel', serif;
+      font-size: 3.2rem; font-weight: 700;
+      color: var(--brown); line-height: 1; margin: 1rem 0 0.25rem;
+    }
+    .price-card.featured .price-amount { color: var(--beige-dark); }
+    .price-period { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .price-card.featured .price-period { color: rgba(237,224,204,0.4); }
+    .price-divider { height: 1px; background: var(--rule); margin: 1.25rem 0; }
+    .price-card.featured .price-divider { background: rgba(140, 94, 60, 0.2); }
+    .price-features { list-style: none; flex: 1; margin-bottom: 2rem; }
+    .price-features li {
+      font-size: 0.875rem; color: var(--muted);
+      padding: 0.6rem 0; border-bottom: 1px solid var(--rule);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .price-card.featured .price-features li {
+      color: rgba(237,224,204,0.55);
+      border-bottom-color: rgba(140, 94, 60, 0.2);
+    }
+    .price-features li::before { content: '✓'; color: var(--brown-mid); font-weight: 700; }
+    .price-card.featured .price-features li::before { color: var(--brown-lt); }
+    .btn-price {
+      display: block; width: 100%; padding: 13px;
+      text-align: center; font-size: 0.8rem;
+      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border-radius: 2px;
+      cursor: pointer; border: none; transition: all 0.25s;
+    }
+    .btn-dark { background: var(--brown-dark); color: var(--white); }
+    .btn-dark:hover { background: var(--brown); }
+    .btn-beige { background: var(--beige); color: var(--brown-dark); }
+    .btn-beige:hover {
+      background: var(--white);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+ 
+    /* ===== TESTIMONIAL ===== */
+    .testi-bg { background: var(--beige); }
+    .testimonial-block { max-width: 660px; margin: 0 auto; text-align: center; }
+    .testimonial-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-style: italic; font-weight: 300;
+      line-height: 1.65; color: var(--brown-dark); margin-bottom: 2rem;
+    }
+    .testimonial-quote::before { content: '\201C'; color: var(--brown-mid); }
+    .testimonial-quote::after  { content: '\201D'; color: var(--brown-mid); }
+    .testimonial-author {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--brown-mid);
+    }
+ 
+    /* ===== CTA ===== */
+    .cta-bg { background: var(--brown-dark); text-align: center; }
+ 
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(89, 52, 28, 0.3);
+      padding: 3rem 0 2rem;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 2rem;
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between; gap: 1.5rem;
+    }
+    .footer-brand {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.18em; color: var(--beige-lt);
+    }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(237,224,204,0.35); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--beige-dark); }
+    .footer-copy { font-size: 0.72rem; color: rgba(237,224,204,0.25); }
+ 
+    /* ===== REVEAL ===== */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+ 
+    @media (max-width: 640px) {
+      .section { padding: 4rem 0; }
+      .step { grid-template-columns: 50px 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+ 
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="logo.svg" alt="Nexia" />
+      <span class="nav-logo-text">NEXIA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+ 
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <img src="logo.svg" alt="Nexia AI" class="hero-logo" />
+    <span class="hero-eyebrow">Real Estate AI Platform</span>
+    <h1 class="hero-h1">
+      Automate Your<br>
+      <span>Real Estate Sales</span><br>
+      Around the Clock
+    </h1>
+    <p class="hero-sub">
+      Nexia qualifies every lead, captures their data, and syncs it instantly to your team — while you sleep.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="window.voiceflow && window.voiceflow.chat.open()">
+        Try Nexia
+      </button>
+      <a href="#how" class="btn-secondary">See How It Works</a>
+    </div>
+  </div>
+</section>
+ 
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Always Active</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">&lt;2s</div>
+      <div class="stat-label">Response Time</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Automated</div>
+    </div>
+  </div>
+</div>
+ 
+<section class="section" id="features" style="background: var(--cream);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Platform Features</span>
+      <div class="gold-rule"></div>
+      <h2 class="section-title">Built for the Modern<br>Real Estate Agency</h2>
+      <p class="section-lead">Every tool your team needs to capture, qualify, and close — without lifting a finger.</p>
+    </div>
+    <div class="features-grid reveal">
+      <div class="feat-card">
+        <span class="feat-icon">🤖</span>
+        <div class="feat-title">AI Lead Qualification</div>
+        <p class="feat-body">Nexia asks the right questions — budget, location, property type — and filters serious buyers from casual browsers, automatically.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">📋</span>
+        <div class="feat-title">Automatic Data Capture</div>
+        <p class="feat-body">Every lead's details are structured and synced to Google Sheets in real time. No manual entry. No missed fields.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">⚡</span>
+        <div class="feat-title">Instant Telegram Alerts</div>
+        <p class="feat-body">The moment a qualified lead arrives, your team gets a Telegram notification — name, budget, and intent included.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">📅</span>
+        <div class="feat-title">Viewing Appointments</div>
+        <p class="feat-body">Nexia schedules property viewings directly within the conversation. No phone tag, no delays, no missed opportunities.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">💬</span>
+        <div class="feat-title">WhatsApp & Telegram</div>
+        <p class="feat-body">Works on the channels your clients already use. Connect your agency's WhatsApp or Telegram in minutes.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🔒</span>
+        <div class="feat-title">Secure & Private</div>
+        <p class="feat-body">All data is encrypted and stored securely. Nexia is fully GDPR-compliant and built on enterprise-grade infrastructure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section class="section how-bg" id="how">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow" style="color:var(--brown-lt);">The Process</span>
+      <div class="gold-rule" style="background:var(--brown-lt);"></div>
+      <h2 class="section-title light">From Inquiry<br>to Closed Deal</h2>
+      <p class="section-lead light">Three steps. Fully automated. Zero effort from your team.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Lead Sends a Message</div>
+          <p class="step-body">A buyer or seller reaches out on WhatsApp or Telegram. Nexia responds immediately — any hour, any day.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">AI Qualifies & Collects</div>
+          <p class="step-body">Nexia guides the conversation, asks smart questions, and extracts budget, location, and property preferences with precision.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Your Team Gets Notified</div>
+          <p class="step-body">Data syncs instantly to Google Sheets. You receive a Telegram alert with a complete lead brief — ready to act.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section class="section testi-bg">
+  <div class="container">
+    <div class="testimonial-block reveal">
+      <p class="testimonial-quote">
+        Our team used to spend hours chasing unqualified leads. Nexia eliminated that entirely. Every morning we wake up to a clean sheet of ready-to-close prospects.
+      </p>
+      <div class="testimonial-author">Real Estate Director — Dubai</div>
+    </div>
+  </div>
+</section>
+ 
+<section class="section pricing-bg" id="pricing">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <span class="eyebrow" style="text-align:center; display:block;">Pricing</span>
+      <div class="gold-rule" style="margin: 1.25rem auto;"></div>
+      <h2 class="section-title" style="text-align:center;">Simple Pricing.<br>No Surprises.</h2>
+      <p class="section-lead" style="margin: 0 auto; text-align:center;">One flat monthly fee. Cancel anytime.</p>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card">
+        <span class="price-badge">Starter</span>
+        <div class="price-name">Basic</div>
+        <div class="price-amount">$49</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>Up to 200 leads / month</li>
+          <li>Google Sheets sync</li>
+          <li>Telegram notifications</li>
+          <li>AI lead qualification</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#" class="btn-price btn-dark">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <span class="price-badge">Most Popular</span>
+        <div class="price-name">Pro</div>
+        <div class="price-amount">$99</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>Unlimited leads</li>
+          <li>WhatsApp + Telegram</li>
+          <li>Appointment scheduling</li>
+          <li>Multi-agent team access</li>
+          <li>Priority support 24/7</li>
+        </ul>
+        <a href="#" class="btn-price btn-beige">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section class="section cta-bg">
+  <div class="container reveal">
+    <span class="eyebrow" style="color:var(--brown-lt); display:block; text-align:center; margin-bottom:1rem;">Ready?</span>
+    <h2 class="section-title light" style="text-align:center; margin-bottom:1rem;">Start Qualifying Leads Tonight</h2>
+    <p class="section-lead light" style="margin:0 auto 2rem; text-align:center;">Experience Nexia firsthand. No signup required.</p>
+    <div style="text-align:center;">
+      <button class="btn-primary" onclick="window.voiceflow && window.voiceflow.chat.open()">
+        Try Nexia
+      </button>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">NEXIA</div>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Nexia. All rights reserved.</div>
+  </div>
+</footer>
+ 
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+ 
+<script type="text/javascript">
+  (function(d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+      window.voiceflow.chat.load({
+        verify: { projectID: '6a2d4cb4f8465ed93777c81d' },
+        url: 'https://general-runtime.voiceflow.com',
+        voice: { url: "https://runtime-api.voiceflow.com" }
+      });
+    }
+    v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+ 
+</body>
+</html>
