@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexia | AI Real Estate Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brown-dark:  #3B1F0E;
+      --brown:       #6B3D1E;
+      --brown-mid:   #8B5A2B;
+      --brown-lt:    #C49A6C;
+      --beige-dark:  #D9C4A8;
+      --beige:       #EDE0CC;
+      --beige-lt:    #F5EFE3;
+      --cream:       #FAF6F0;
+      --white:       #FFFFFF;
+      --ink:         #1C110A;
+      --muted:       #7A6248;
+      --rule:        rgba(107,61,30,0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      background: rgba(250,246,240,0.96);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--rule);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem; height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .btn-nav {
+      background: var(--brown-dark); color: var(--beige-lt);
+      padding: 0.6rem 1.2rem; border-radius: 4px;
+      text-decoration: none; font-size: 0.85rem; font-weight: 500;
+      transition: background 0.3s;
+    }
+    .btn-nav:hover { background: var(--brown-mid); }
+
+    /* HERO */
+    .hero {
+      background: var(--brown-dark);
+      padding: 7rem 2rem 6rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700; color: var(--beige-lt);
+      letter-spacing: 0.05em; margin-bottom: 1.5rem;
+      max-width: 800px; margin-left: auto; margin-right: auto;
+      line-height: 1.2;
+    }
+    .hero p {
+      color: rgba(237,224,204,0.7);
+      font-size: 1.1rem; letter-spacing: 0.05em;
+      max-width: 600px; margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+    .btn-main {
+      display: inline-block;
+      background: var(--brown-lt); color: var(--brown-dark);
+      padding: 1rem 2rem; font-size: 1rem; font-weight: 600;
+      border-radius: 4px; text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-main:hover {
+      background: var(--beige-lt); transform: translateY(-2px);
+    }
+
+    /* FEATURES */
+    .features {
+      max-width: 1100px; margin: 5rem auto; padding: 0 2rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: var(--white);
+      padding: 2.5rem; border-radius: 4px;
+      border: 1px solid var(--rule);
+      text-align: center;
+    }
+    .feature-icon {
+      font-size: 2.5rem; margin-bottom: 1rem;
+    }
+    .feature-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem; font-weight: 600;
+      color: var(--brown-dark); margin-bottom: 1rem;
+    }
+    .feature-text {
+      font-size: 0.95rem; color: var(--muted); line-height: 1.7;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--beige);
+      padding: 5rem 2rem; text-align: center;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .cta-section h2 {
+      font-family: 'Cinzel', serif; font-size: 2rem;
+      color: var(--brown-dark); margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: var(--muted); margin-bottom: 2rem; font-size: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--brown-dark);
+      padding: 3rem 2rem; text-align: center;
+    }
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .footer-logo img {
+      height: 32px;
+      width: auto;
+      opacity: 0.9;
+    }
+    .footer-links { margin-bottom: 1.5rem; }
+    .footer-links a {
+      color: rgba(237,224,204,0.6); text-decoration: none;
+      font-size: 0.9rem; margin: 0 1rem; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--beige-lt); }
+    .footer-copy {
+      font-size: 0.8rem; color: rgba(237,224,204,0.3);
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0 1rem; }
+      .hero { padding: 5rem 1rem 4rem; }
+      .features { margin: 3rem auto; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="logo.svg" alt="Nexia Logo">
+    </a>
+    <a href="mailto:support@nexia.ai" class="btn-nav">Get Started</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Automate Your Real Estate Leads with AI</h1>
+  <p>Stop losing high-ticket clients. Our Done-For-You AI agents capture, qualify, and sync your leads 24/7 directly to your CRM.</p>
+  <a href="mailto:support@nexia.ai" class="btn-main">Get Your Custom AI System</a>
+</div>
+
+<div class="features">
+  <div class="feature-card">
+    <div class="feature-icon">🤖</div>
+    <h3 class="feature-title">24/7 AI Qualification</h3>
+    <p class="feature-text">Our bilingual AI agents instantly speak with prospects, asking the right questions to separate serious buyers from window shoppers.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">⚡</div>
+    <h3 class="feature-title">Instant Telegram Alerts</h3>
+    <p class="feature-text">The moment a high-value lead is qualified, your sales team receives an instant notification with all their details.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">📊</div>
+    <h3 class="feature-title">Google Sheets Sync</h3>
+    <p class="feature-text">No more manual data entry. Every lead's data, budget, and property preference is automatically organized in your database.</p>
+  </div>
+</div>
+
+<div class="cta-section" id="contact">
+  <h2>Ready to Scale Your Agency?</h2>
+  <p>Contact us today to setup your automation pipeline and start receiving qualified leads instantly.</p>
+  <a href="mailto:support@nexia.ai" class="btn-main" style="background: var(--brown-dark); color: var(--beige-lt);">Get Started Now</a>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo.svg" alt="Nexia Logo">
+  </div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:support@nexia.ai">Contact Us</a>
+  </div>
+  <p class="footer-copy">© 2026 Nexia AI Agency. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
