@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EDE0CC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C49A6C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="100" fill="#2C1A0E"/>
+
+  <!-- Top petal (beige) -->
+  <path d="M 100 10 C 112 55 112 55 100 100 C 88 55 88 55 100 10 Z" fill="#EDE0CC"/>
+
+  <!-- Bottom petal (beige) -->
+  <path d="M 100 190 C 112 145 112 145 100 100 C 88 145 88 145 100 190 Z" fill="#EDE0CC"/>
+
+  <!-- Left petal (gold) -->
+  <path d="M 10 100 C 55 112 55 112 100 100 C 55 88 55 88 10 100 Z" fill="#C49A6C"/>
+
+  <!-- Right petal (gold) -->
+  <path d="M 190 100 C 145 112 145 112 100 100 C 145 88 145 88 190 100 Z" fill="#C49A6C"/>
+</svg>
