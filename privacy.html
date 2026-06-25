@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'none';">
+  <title>Privacy Policy — Nexia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brown-dark:#3B1F0E;--brown:#6B3D1E;--brown-mid:#8B5A2B;
+      --brown-lt:#C49A6C;--beige:#EDE0CC;--beige-lt:#F5EFE3;
+      --cream:#FAF6F0;--white:#FFFFFF;--ink:#1C110A;
+      --muted:#7A6248;--rule:rgba(107,61,30,0.15);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+ 
+    nav{background:rgba(250,246,240,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{display:flex;align-items:center;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-back{font-size:0.75rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.06em;transition:color 0.2s;}
+    .nav-back:hover{color:var(--brown);}
+ 
+    .hero{background:var(--brown-dark);padding:5rem 2rem 4rem;text-align:center;}
+    .hero h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--beige-lt);letter-spacing:0.05em;margin-bottom:1rem;}
+    .hero-rule{width:44px;height:2px;background:var(--brown-lt);margin:1.25rem auto;}
+    .hero p{color:rgba(237,224,204,0.45);font-size:0.85rem;letter-spacing:0.08em;}
+ 
+    .content{max-width:780px;margin:0 auto;padding:4rem 2rem 6rem;}
+    .section-block{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--rule);}
+    .section-block:last-child{border-bottom:none;}
+    .section-num{font-size:0.65rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--brown-mid);margin-bottom:0.5rem;display:block;}
+    .section-title{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;color:var(--brown-dark);margin-bottom:1rem;}
+    .section-body{font-size:0.9rem;line-height:1.85;color:var(--muted);}
+    .section-body p{margin-bottom:0.75rem;}
+    .section-body p:last-child{margin-bottom:0;}
+ 
+    .policy-list{list-style:none;margin:0.75rem 0;}
+    .policy-list li{font-size:0.9rem;color:var(--muted);padding:0.55rem 0;border-bottom:1px solid var(--rule);display:flex;align-items:flex-start;gap:10px;line-height:1.7;}
+    .policy-list li:last-child{border-bottom:none;}
+    .policy-list li::before{content:'✓';color:var(--brown-mid);font-weight:700;flex-shrink:0;margin-top:1px;}
+ 
+    .highlight-box{background:var(--beige);border-left:3px solid var(--brown-mid);padding:1.25rem 1.5rem;border-radius:2px;margin:1rem 0;}
+    .highlight-box p{font-size:0.9rem;color:var(--brown-dark);line-height:1.75;margin:0;}
+ 
+    .contact-card{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:2rem;margin-top:1rem;}
+    .contact-card p{font-size:0.88rem;color:var(--muted);line-height:1.75;margin-bottom:0.5rem;}
+    .contact-card a{color:var(--brown);text-decoration:none;font-weight:500;}
+    .contact-card a:hover{text-decoration:underline;}
+ 
+    footer{background:var(--brown-dark);padding:2.5rem 0;text-align:center;border-top:1px solid rgba(107,61,30,0.25);}
+    .footer-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;}
+    .footer-logo img{height:28px;width:auto;opacity:0.8;}
+    .footer-copy{font-size:0.7rem;color:rgba(237,224,204,0.25);}
+    .footer-links{display:flex;gap:2rem;list-style:none;}
+    .footer-links a{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(237,224,204,0.32);text-decoration:none;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--beige-lt);}
+ 
+    @media(max-width:640px){
+      .content{padding:2.5rem 1.25rem 4rem;}
+      .hero{padding:3rem 1.25rem 2.5rem;}
+      .nav-inner{padding:0 1rem;}
+      .footer-inner{flex-direction:column;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+ 
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.svg" alt="Nexia" /></a>
+    <a href="index.html" class="nav-back">← Back to Home</a>
+  </div>
+</nav>
+ 
+<div class="hero">
+  <h1>Privacy Policy</h1>
+  <div class="hero-rule"></div>
+  <p>Last updated: June 2026</p>
+</div>
+ 
+<div class="content">
+ 
+  <div class="section-block">
+    <div class="highlight-box">
+      <p>At Nexia, your privacy is our priority. This policy explains clearly what data we collect, how we use it, and how we protect it. We will never sell your data to anyone.</p>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 01</span>
+    <h2 class="section-title">Who We Are</h2>
+    <div class="section-body">
+      <p>Nexia is an AI-powered lead qualification platform designed for real estate agencies. We help agencies capture, qualify, and manage leads automatically through AI agents connected to Telegram and Google Sheets.</p>
+      <p>Questions? Contact us at <strong>support@nexia.ai</strong></p>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 02</span>
+    <h2 class="section-title">What Data We Collect</h2>
+    <div class="section-body">
+      <p>When a lead interacts with our AI agent, we may collect:</p>
+      <ul class="policy-list">
+        <li>Full name or anonymous interaction status</li>
+        <li>Phone number (including country code)</li>
+        <li>Email address</li>
+        <li>City or neighborhood of interest</li>
+        <li>Property type (Apartment, Villa, Office, Land)</li>
+        <li>Budget or expected sale price</li>
+        <li>Purchase or sale timeline</li>
+        <li>Intent type (Buyer or Seller)</li>
+      </ul>
+      <p style="margin-top:0.75rem;">We do not collect payment information, government IDs, or any sensitive personal data beyond the above.</p>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 03</span>
+    <h2 class="section-title">How We Use Your Data</h2>
+    <div class="section-body">
+      <ul class="policy-list">
+        <li>To qualify and categorize real estate leads</li>
+        <li>To notify the real estate agency via Telegram</li>
+        <li>To store lead information in Google Sheets</li>
+        <li>To enable the agency to follow up with leads</li>
+        <li>To improve our AI agent's performance</li>
+      </ul>
+      <div class="highlight-box" style="margin-top:1rem;">
+        <p>We do <strong>not</strong> use your data for advertising, profiling, or any purpose beyond connecting you with a real estate specialist.</p>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 04</span>
+    <h2 class="section-title">Who We Share Data With</h2>
+    <div class="section-body">
+      <ul class="policy-list">
+        <li><strong>The real estate agency</strong> you contacted</li>
+        <li><strong>Google Sheets</strong> — secure data storage</li>
+        <li><strong>Telegram</strong> — instant notifications</li>
+        <li><strong>Voiceflow</strong> — AI conversation platform</li>
+        <li><strong>Make.com</strong> — automation platform</li>
+      </ul>
+      <p style="margin-top:0.75rem;">We <strong>never</strong> sell, rent, or trade your data to any third party.</p>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 05</span>
+    <h2 class="section-title">Data Retention</h2>
+    <div class="section-body">
+      <p>Lead data is retained for a maximum of 12 months. After this period, data is permanently deleted from all systems. You may request deletion at any time.</p>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 06</span>
+    <h2 class="section-title">Your Rights</h2>
+    <div class="section-body">
+      <ul class="policy-list">
+        <li>Right to access your data</li>
+        <li>Right to correct inaccurate data</li>
+        <li>Right to delete your data</li>
+        <li>Right to object to data use</li>
+        <li>Right to data portability</li>
+      </ul>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 07</span>
+    <h2 class="section-title">Security</h2>
+    <div class="section-body">
+      <p>All data is encrypted via HTTPS. Our third-party providers maintain enterprise-grade security. Our website is a static site with no backend database, significantly reducing breach risk.</p>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 08</span>
+    <h2 class="section-title">Cookies</h2>
+    <div class="section-body">
+      <p>We do not use tracking or advertising cookies. Only essential cookies may be used to ensure the website functions correctly.</p>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 09</span>
+    <h2 class="section-title">Policy Updates</h2>
+    <div class="section-body">
+      <p>We may update this policy periodically. Changes will be posted here with an updated date.</p>
+    </div>
+  </div>
+ 
+  <div class="section-block">
+    <span class="section-num">Section 10</span>
+    <h2 class="section-title">Contact Us</h2>
+    <div class="section-body">
+      <div class="contact-card">
+        <p><strong>Nexia AI</strong></p>
+        <p>Email: <a href="mailto:support@nexia.ai">support@nexia.ai</a></p>
+        <p>Website: <a href="index.html">nexia.ai</a></p>
+        <p>Response time: Within 48 hours</p>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+ 
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo"><img src="logo.svg" alt="Nexia" /></a>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mailto:support@nexia.ai">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Nexia AI. All rights reserved.</div>
+  </div>
+</footer>
+ 
+</body>
+</html>
+ 
